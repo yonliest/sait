@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Продукты</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Пельмени от Андрея</h1>
+            <br>
+            <br>
+            <h2><a href="/register" class="button"> Регистрация</a></h2>
+            <h2><a href="/login" class="button"> Войти</a></h2>
+        </header>
+
+        <div class="text">
+            <h2>Все товары:</h2>
+            <br>
+        <div class="plov">
+            {% for i in a %}
+                <div class="product-card">
+                    <img src="{{i.image}}" alt="Product Image" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">{{i.name}}</h2>
+                        <p class="product-description">В упаковке {{i.count}} штук, весит {{i.weight}}, качество {{i.quality}} из 5.</p>
+                        <p class="product-price">{{i.cost}}</p>
+                        <a class="product-button" href="/product/{{i.id}}">Перейти к товару</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+            <br>
+            <br>
+        </div>
+
+        <footer>
+            <p>Все права защищены.</p>
+        </footer>
+
+    </body>
+
+</html>

@@ -1,0 +1,99 @@
+body {
+    font-family: 'Consolas', sans-serif;
+    margin: 0;
+    background-color: #f8f8f8;
+}
+
+.product-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    gap: 30px;
+}
+
+.product-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.thumbnails img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-info {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.price {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+.description {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.features {
+    margin-bottom: 20px;
+}
+
+.features ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.add-to-cart, .add-to-wishlist {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+/*Responsive*/
+
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+    }
+    .product-image {
+        width: 100%;
+    }
+
+    .product-info {
+        width: 100%;
+    }
+}

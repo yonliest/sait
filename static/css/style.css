@@ -1,0 +1,103 @@
+body {
+    font-family: "Consolas";
+    background-color: #f0f0f0;
+    color: #fff;
+}
+
+header {
+    color: #000;
+    margin-bottom: 64px;
+    margin-left: 40px
+}
+
+.text {
+    color: #2a422d;
+    margin: 10px;
+}
+
+footer {
+    color: #000;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #9c5af2;
+    border: 1px solid #3b2657;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 10px
+}
+
+
+.product-card {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  width: 300px; /* Adjust as needed */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden; /* Prevents image overflow */
+  background-color: #fff; /* White background */
+  transition: transform 0.2s ease-in-out; /* Add smooth transition on hover */
+  margin-right: 20px;
+}
+
+.product-card:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.product-image {
+  width: 100%;
+  height: 200px; /* Adjust height as needed */
+  object-fit: cover; /* Cover the entire container */
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.product-description {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #9c5af2;
+  margin-bottom: 10px;
+}
+
+.product-button {
+  background-color: #7f23f7;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.product-button:hover {
+  background-color: #6b27c4;
+}
+
+.plov {
+    display: flex;
+}

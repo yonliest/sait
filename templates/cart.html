@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/static/css/style3.css">
+</head>
+<body>
+    <div class="cart-container">
+        <h1>Корзина товаров</h1>
+        <div class="cart-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Товар</th>
+                        <th>Цена</th>
+                        <th>Количество</th>
+                        <th>Сумма</th>
+                        <th>Убрать</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td>{{product.name}}</td>
+                        <td>{{product.cost}}</td>
+                        <td>
+                            <input type="number" value="{{product.quantity}}" min="1" class="quantity-input" disabled>
+                        </td>
+                        <td class="item-total"></td>
+                        <td><button class="remove-item" disabled>Убрать</button></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" align="right"><strong>Сумма:</strong></td>
+                        <td id="cart-total"></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="checkout-area">
+            <button class="checkout-button">Купить</button>
+        </div>
+    </div>
+</body>
+</html>

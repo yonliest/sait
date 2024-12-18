@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="/static/css/style2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="product-image">
+            <img src="{{product.image}}" alt="Product Image">
+
+        </div>
+        <div class="product-details">
+            <h1>{{product.name}}</h1>
+            <p class="product-price">{{product.cost}}р.</p>
+            <p class="product-description"></p>
+            <ul class="product-features">
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+            </ul>
+            <a class="add-to-cart" href="/cart">Добавить в корзину</a>
+        </div>
+    </div>
+</body>
+</html>
