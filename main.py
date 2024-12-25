@@ -123,10 +123,31 @@ def load_cart():
                 unpacked_products.append(Products(i[0], i[1], i[2], i[3], i[4], i[5], i[6]))
             return unpacked_products
 
-@app.route('/cart')
 @login_required
+@app.route('/cart')
 def cart():
-    return render_template('cart.html', products=load_cart())
+    user_id = current_user.id
+    pr_oducts = load_cart()
+    sum_money = 0
+    for i in pr_oducts:
+        sum_money += i.cost
+    return render_template('cart.html', products=pr_oducts, sum_money=sum_money)
+
+
+@login_required
+@app.route("/add-to-cart/<product_ID>")
+def add_to_cart(product_ID):
+    user_id = current_user.id
+    add_product_from_user(user_id, product_ID)
+    return redirect(url_for("cart"))
+
+
+def add_product_from_user(user_id, product_ID):
+    cs = connection_string()
+    with psycopg2.connect(host=cs["host"], user=cs["user"], password=cs["password"], dbname=cs["dbname"]) as conn:
+        with conn.cursor() as cursor:
+            cursor.execute("INSERT INTO \"Orders\"(\"user_ID\", \"product_ID\", \"quantity\") VALUES (%s, %s, %s)", (current_user.id, product_ID, 1))
+            conn.commit()
 
 
 if __name__ == "__main__":
